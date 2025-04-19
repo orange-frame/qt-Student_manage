@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>C:/Users/20758/Desktop/3169b71d7d8bf1514c2369770439c9050316637a.jpg</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>style.css</file>
+    </qresource>
+</RCC>
