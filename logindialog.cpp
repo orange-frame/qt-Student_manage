@@ -22,20 +22,32 @@ void LoginDialog::initWidget()
     connect(loginButton,&QPushButton::clicked,this,&LoginDialog::handleLogin);
     connect(cancelButton,&QPushButton::clicked,this,&LoginDialog::rejected);
 
-    QFormLayout *formlayout = new QFormLayout;
-    formlayout->addRow("用户名:",usernameEdit);
-    formlayout->addRow("密码:",passwordEdit);
+    QFormLayout *formLayout = new QFormLayout;
+    formLayout->addRow("用户名:", usernameEdit);
+    formLayout->addRow("密码:", passwordEdit);
 
-    QHBoxLayout *btnBox = new QHBoxLayout;
-    btnBox->addStretch();
-    btnBox->addWidget(loginButton);
-    btnBox->addWidget(cancelButton);
+    // 中间包一层 QWidget + QHBoxLayout → 居中 formLayout
+    QWidget *formContainer = new QWidget(this);
+    QHBoxLayout *formHCenter = new QHBoxLayout(formContainer);
+    formHCenter->addStretch();
+    formHCenter->addLayout(formLayout);
+    formHCenter->addStretch();
+    formHCenter->setContentsMargins(0, 0, 0, 0);
 
-    QVBoxLayout *mainBox = new QVBoxLayout;
-    mainBox->addLayout(formlayout);
-    mainBox->addLayout(btnBox);
+    // 按钮区
+    QHBoxLayout *buttonLayout = new QHBoxLayout;
+    buttonLayout->addStretch();
+    buttonLayout->addWidget(loginButton);
+    buttonLayout->addWidget(cancelButton);
 
-    setLayout(mainBox);
+    // 主垂直布局
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->addStretch();
+    mainLayout->addWidget(formContainer);  // 让 form 在中间显示
+    mainLayout->addSpacing(10);
+    mainLayout->addLayout(buttonLayout);
+    mainLayout->addStretch();
+    mainLayout->setContentsMargins(30, 30, 30, 30);
 }
 
 void LoginDialog::handleLogin()
