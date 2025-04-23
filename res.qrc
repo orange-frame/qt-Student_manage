@@ -1,5 +1,8 @@
 <RCC>
-    <qresource prefix="/images"/>
+    <qresource prefix="/images">
+        <file alias="/1">image/pic.png</file>
+        <file alias="system">image/mana.png</file>
+    </qresource>
     <qresource prefix="/qss">
         <file>style.css</file>
     </qresource>

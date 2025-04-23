@@ -9,6 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addStudentdialog.cpp \
+    addTeacherdialog.cpp \
+    detaildialog.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -16,8 +19,12 @@ SOURCES += \
     treepanel.cpp
 
 HEADERS += \
+    addStudentdialog.h \
+    addTeacherdialog.h \
+    detaildialog.h \
     logindialog.h \
     mainwindow.h \
+    student.h \
     tablepanel.h \
     treepanel.h
 

@@ -1,11 +1,10 @@
-#include "AddStudentDialog.h"
-#include <QVBoxLayout>
-#include <QFormLayout>
-#include <QPushButton>
-#include <QComboBox>
+#include "addTeacherdialog.h"
 
-AddStudentDialog::AddStudentDialog(const QString &defaultName, QWidget *parent) : QDialog(parent) {
-    setWindowTitle("添加学生");
+#include<QDialog>
+AddTeacherDialog::AddTeacherDialog(const QString &defaultName, QWidget *parent)
+    :QDialog(parent)
+{
+    setWindowTitle("添加教师");
 
     idEdit = new QLineEdit(this);
     nameEdit = new QLineEdit(this);
@@ -20,7 +19,7 @@ AddStudentDialog::AddStudentDialog(const QString &defaultName, QWidget *parent) 
     cancelButton = new QPushButton("取消", this);
 
     QFormLayout *formLayout = new QFormLayout;
-    formLayout->addRow("学号", idEdit);
+    formLayout->addRow("工号", idEdit);
     formLayout->addRow("姓名", nameEdit);
     formLayout->addRow("性别", sexCombo);
     formLayout->addRow("身高", heightEdit);
@@ -33,26 +32,27 @@ AddStudentDialog::AddStudentDialog(const QString &defaultName, QWidget *parent) 
 
     setLayout(mainLayout);
 
-    connect(addButton, &QPushButton::clicked, this, &AddStudentDialog::accept);
-    connect(cancelButton, &QPushButton::clicked, this, &AddStudentDialog::reject);
+    connect(addButton, &QPushButton::clicked, this, &AddTeacherDialog::accept);
+    connect(cancelButton, &QPushButton::clicked, this, &AddTeacherDialog::reject);
 }
 
-QString AddStudentDialog::studentId() const {
+QString AddTeacherDialog::studentId() const {
     return idEdit->text();
 }
 
-QString AddStudentDialog::studentName() const {
+QString AddTeacherDialog::studentName() const {
     return nameEdit->text();
 }
 
-QString AddStudentDialog::studentSex() const {
+QString AddTeacherDialog::studentSex() const {
     return sexCombo->currentText();
 }
 
-double AddStudentDialog::studentHeight() const {
+double AddTeacherDialog::studentHeight() const {
     return heightEdit->text().toDouble();
 }
 
-QString AddStudentDialog::studentCollege() const {
+QString AddTeacherDialog::studentCollege() const {
     return collegeEdit->text();
 }
+

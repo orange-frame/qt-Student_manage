@@ -10,10 +10,11 @@ public:
     double height;  //身高
     QString college;    //所属学院
     QString university;
+    QString avatarPath;
 
     Student()=default;
-    Student(const QString &id,const QString &name,const QString &sex,const double &height,const QString college,QString university)
-        :s_id(id),name(name),sex(sex),height(height),college(college),university(university)
+    Student(const QString &id,const QString &name,const QString &sex,const double &height,const QString college,QString university,QString avatarPath)
+        :s_id(id),name(name),sex(sex),height(height),college(college),university(university),avatarPath(avatarPath)
     {}
 };
 #endif // STUDENT_H

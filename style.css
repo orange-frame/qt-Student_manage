@@ -51,3 +51,161 @@ QPushButton#cancelButton {
 QPushButton#cancelButton:hover {
     background-color: #cccccc;
 }
+
+
+/* ========================== QTableWidget 样式 ========================== */
+
+/* QTableWidget 基本样式 */
+QTableWidget {
+    background-color: #FAFAFA;  /* 清新的背景色 */
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: #444;
+    border-radius: 12px;  /* 圆角 */
+    border: 1px solid #E0E0E0;  /* 边框 */
+    selection-background-color: #3E9F7F;  /* 选中行的背景色 */
+    outline: none;
+    padding: 10px;
+}
+
+/* 表头样式 */
+QTableWidget::horizontalHeader {
+    background-color: #2C3E50;  /* 深色背景 */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 12px 12px 0 0;  /* 圆角 */
+}
+
+/* 表格项样式 */
+QTableWidget::item {
+    padding: 8px;
+    border: none;
+    background-color: #FFF;
+    border-radius: 10px;  /* 圆角 */
+}
+
+/* 鼠标悬停时的单元格背景颜色 */
+QTableWidget::item:hover {
+    background-color: #f0f0f0;
+
+}
+
+/* 选中行的样式 */
+QTableWidget::item:selected {
+    background-color: #3E9F7F;
+    color: white;
+    font-weight: bold;
+}
+
+/* 表格行间距 */
+QTableWidget::item {
+    margin: 5px;
+}
+
+/* 垂直和水平滚动条 */
+QTableWidget::verticalScrollBar, QTableWidget::horizontalScrollBar {
+    border: none;
+    background-color: #E0E0E0;
+    height: 10px;
+    width: 10px;
+    margin: 0px;
+}
+
+/* 滚动条滑块 */
+QTableWidget::verticalScrollBar::handle, QTableWidget::horizontalScrollBar::handle {
+    background-color: #888;
+    border-radius: 5px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+/* 滚动条鼠标悬停效果 */
+QTableWidget::verticalScrollBar::handle:hover, QTableWidget::horizontalScrollBar::handle:hover {
+    background-color: #555;
+}
+
+/* ========================== QTreeWidget 样式 ========================== */
+
+/* QTreeWidget 基本样式 */
+QTreeWidget {
+    background-color: #F8F8F8;  /* 清新背景 */
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: #444;
+    border-radius: 12px;  /* 圆角 */
+    border: none;
+    padding: 10px;
+}
+
+/* 树的项（节点）的样式 */
+QTreeWidget::item {
+    padding: 8px;
+    border: 1px solid transparent;  /* 隐藏节点边框 */
+    border-radius: 10px;  /* 圆角 */
+}
+
+/* 鼠标悬停时的节点背景色 */
+QTreeWidget::item:hover {
+    background-color: #f0f0f0;
+
+}
+
+/* 选中项的背景色 */
+QTreeWidget::item:selected {
+    background-color: #3E9F7F;
+    color: white;
+}
+
+/* 树的节点字体样式 */
+QTreeWidget::item {
+    font-size: 14px;
+    color: #444;
+}
+
+/* 树的表头（节点标题） */
+QTreeWidget::header {
+    background-color: #2C3E50;  /* 深色背景 */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 12px 12px 0 0;  /* 圆角 */
+}
+
+/* 树的每个节点字体样式 */
+QTreeWidget::item {
+    font-size: 14px;
+    color: #333;
+}
+
+/* 垂直和水平滚动条 */
+QTreeWidget::verticalScrollBar, QTreeWidget::horizontalScrollBar {
+    border: none;
+    background-color: #F0F0F0;
+    height: 8px;
+    width: 8px;
+    margin: 0px;
+}
+
+/* 滚动条滑块 */
+QTreeWidget::verticalScrollBar::handle, QTreeWidget::horizontalScrollBar::handle {
+    background-color: #888;
+    border-radius: 5px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+/* 滚动条鼠标悬停效果 */
+QTreeWidget::verticalScrollBar::handle:hover, QTreeWidget::horizontalScrollBar::handle:hover {
+    background-color: #555;
+}
+
+/* 节点展开/收起的图标 */
+QTreeWidget::indicator:closed {
+    image: url(:/icons/closed.png);  /* 自定义关闭图标 */
+}
+
+QTreeWidget::indicator:open {
+    image: url(:/icons/open.png);  /* 自定义打开图标 */
+}
+
